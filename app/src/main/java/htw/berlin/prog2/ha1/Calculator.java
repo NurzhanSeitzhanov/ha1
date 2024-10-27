@@ -81,12 +81,9 @@ public class Calculator {
             default -> throw new IllegalArgumentException();
         };
 
-        if (result == (int) result) {
-            screen = String.valueOf((int) result);  // Show as integer if no decimal places
-        } else {
-            screen = Double.toString(result);       // Show as double if it has decimals
-        }
+        screen = Double.toString(result);
 
+        if(screen.endsWith(".0")) screen = screen.substring(0,screen.length()-2);
         if(screen.equals("NaN")) screen = "Error";
         if(screen.contains(".") && screen.length() > 11) screen = screen.substring(0, 10);
 
