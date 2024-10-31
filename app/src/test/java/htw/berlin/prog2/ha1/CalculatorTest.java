@@ -108,6 +108,7 @@ class CalculatorTest {
 
     @Test
     @DisplayName("should divide number to 100 when pressing the ‘Percentage’ button")
+
     void testProzent() {
         Calculator calc = new Calculator();
 
